@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome to myWriteup!
 
 You can use the [editor on GitHub](https://github.com/b3y0nd1xx7/HTB-Writeup/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
