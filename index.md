@@ -1,10 +1,17 @@
 ## Welcome to myWriteup!
 
-You can use the [editor on GitHub](https://github.com/b3y0nd1xx7/HTB-Writeup/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Hi there!
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Brief intro about me; 
+I am just a newbie in Infosec Industry and also in doing boxes on Hackthebox.eu. 
+I want to focus on DFIR but also, wanting to learn some pentesting approaches, methodologies and techniques.
 
-### Markdown
+Actually this is my first writeup of all the three (3) machines i have owned. 
+
+I hope you will enjoy this and also, please correct me if there are some things i have misunderstood or please do
+feel to teach me about the concepts because it will help me a lot. Thanks 
+
+### HTB-Writeup
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
