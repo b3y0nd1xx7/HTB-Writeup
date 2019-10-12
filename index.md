@@ -4,20 +4,23 @@ Hi there!
 
 Brief intro about me; 
 I am just a newbie in Infosec Industry, Capture-the-flag and also, in doing boxes on Hackthebox. 
-I want to focus on DFIR but also, wants to learn some pentesting approaches, methodologies and techniques.
+I want to focus on DFIR but also, wants to learn some pentesting approaches, methodologies and techniques so Hackthebox is a great help.
 
 Actually this is my first writeup of all the three (3) machines i have owned. 
 
-I hope you will enjoy this and also, please correct me if there are some things that i have misunderstood or please do
-feel to teach me about the concepts because it will help me a lot. Thanks 
+I hope you will enjoy this and also, please correct me if there are some things that i have misunderstood about the machine and process or please do feel free to reach me out and to help me improve my understanding about the concepts because it will help me a lot. Thanks! 
 
 ### HTB-Writeup
 
-Maybe if you are also a newbie in infosec/pentesting field like me, you may not heard already about [**Hackthebox.eu**](https://www.hackthebox.eu).
-Well, **Hack The Box** is simply just an online platform allowing you to test and advance your skills in cyber security. Just hack your way in and start the fun.
+Maybe if you are also a newbie in infosec/pentesting field like me, you may not heard yet about [**Hackthebox.eu**](https://www.hackthebox.eu).
+Well, **Hack The Box** is simply just an online platform allowing you to test and advance your skills in cyber security. Well, just click the link, hack your way in and start the fun.
+
+
 
 
 ### Recon
+Initially, i run nmap to scan the machine and to look for those open ports and services that usually can be used for exploitation.
+Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, whatv operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics.
 
 ```markdown
 # Nmap 7.70 scan initiated Wed Sep 25 01:04:13 2019 as: nmap -sC -sV -oA Writeup 10.10.10.138
@@ -40,8 +43,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 # Nmap done at Wed Sep 25 01:04:48 2019 -- 1 IP address (1 host up) scanned in 35.05 seconds
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+And then i saw those open ports 22 and 80 (which is for 22 - SSH and 80 - HTTP). Usually, after doing nmap i am trying to look for the vulnerabilities of the open services and applications the machine are using
 
 ### Jekyll Themes
 
