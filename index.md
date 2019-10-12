@@ -67,7 +67,23 @@ I've tried to search for the vulnerabilities of the **OpenSSH 7.4p1 Debian 10+de
 
 Then that's the time i've accessed the port 80 and saw this website.
 
-![HTB-Writeup Website1](images/infocard.PNG)
+![HTB-Writeup Website1](images/website1.PNG)
+
+At first, there is a rabbit hole in the website stating about the **Eyeore DOS Protection Script** but it is not related to the machine. Then i went back again to review my nmap scan and nocticed the **robots.txt**
+
+ A **robots.txt** file tells search engine crawlers which pages or files the crawler can or can't request from your site.
+ 
+ ```markdown
+ 80/tcp open  http    Apache httpd 2.4.25 ((Debian))
+| http-robots.txt: 1 disallowed entry 
+|_/writeup/
+ ```
+ When i accessed the robots.txt this is the output
+ ![HTB-Writeup robots.txt](images/robots.PNG)
+
+ Of course we are trying to hack our way in to own this machine so, i still try to access the **/writeup** directory and saw this unfinished website of the owner.
+ 
+ ![HTB-Writeup /writeup](images/writeup.PNG)
 
 ### Jekyll Themes
 
