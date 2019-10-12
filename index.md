@@ -16,7 +16,7 @@ Maybe if you are also a newbie in infosec/pentesting field like me, you may not 
 Well, **Hack The Box** is simply just an online platform allowing you to test and advance your skills in cyber security. Well, just click the link, hack your way in and start the fun.
 
 
-![HTB-Writeup Infocard](https://b3y0nd1xx7.github.com/images/inforcard.png)
+![HTB-Writeup Infocard](images/infocard.PNG)
 
 
 ### Recon
