@@ -3,12 +3,12 @@
 Hi there!
 
 Brief intro about me; 
-I am just a newbie in Infosec Industry and also in doing boxes on Hackthebox.eu. 
-I want to focus on DFIR but also, wanting to learn some pentesting approaches, methodologies and techniques.
+I am just a newbie in Infosec Industry, Capture-the-flag and also, in doing boxes on Hackthebox. 
+I want to focus on DFIR but also, wants to learn some pentesting approaches, methodologies and techniques.
 
 Actually this is my first writeup of all the three (3) machines i have owned. 
 
-I hope you will enjoy this and also, please correct me if there are some things i have misunderstood or please do
+I hope you will enjoy this and also, please correct me if there are some things that i have misunderstood or please do
 feel to teach me about the concepts because it will help me a lot. Thanks 
 
 ### HTB-Writeup
