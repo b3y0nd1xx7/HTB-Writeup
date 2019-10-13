@@ -182,7 +182,7 @@ So i run the exploit using this syntax but it has errors
 python exploit.py -u http://10.10.10.138/writeup --crack -w /usr/share/wordlists/rockyou.txt
 ```
 
-I am tried to edit the code because i think the default **TIME** value is not working which is one (1). I replaced it with 2, 3, 4, and 5 and at last, it works with the value five (5) 
+I tried to edit the code because i think the default **TIME** value is not working which is one (1). I replaced it with 2, 3, 4, and 5 and at last, it works with the value five (5) 
 
 
 ```markdown
