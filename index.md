@@ -18,7 +18,7 @@ Well, **Hack The Box** is simply just an online platform allowing you to test an
 
 So, let's start!
 
-![HTB-Writeup Website1](images/infocard.PNG)
+![HTB-Writeup infocard](images/infocard.PNG)
 
 As a brief description about this machine, it is an easy-rated box created by [**jkr**](https://twitter.com/ATeamJKR), which taught me about how to use the exploit for one of the CMS Made Simple vulnerability and also ***PATH*** highjacking.
 
