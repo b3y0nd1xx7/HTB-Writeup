@@ -2,7 +2,8 @@
 
 Hi there!
 
-Brief intro about me; 
+I am b3yond1xx7 and here's a brief intro about me; 
+
 I am just a newbie in Infosec Industry, Capture-the-flag and also, in doing boxes on Hackthebox. 
 I want to focus on DFIR but i also want to learn some pentesting approaches, methodologies and techniques so Hackthebox is a great help.
 
@@ -12,13 +13,14 @@ I hope you will enjoy this and also, please correct me if there are some things 
 
 ### HTB-Writeup
 
-![HTB-Writeup Infocard](images/infocard.PNG)
-
 Maybe if you are also a newbie in infosec/pentesting field like me, you may not heard yet about [**Hackthebox.eu**](https://www.hackthebox.eu).
 Well, **Hack The Box** is simply just an online platform allowing you to test and advance your skills in cyber security. Just click the link, hack your way in and start the fun.
 
 So, let's start!
 
+![HTB-Writeup Website1](images/website1.PNG)
+
+As a brief description about this machine, it is an easy box created by [**jkr**](https://twitter.com/ATeamJKR).
 ### Recon
 Initially, i run nmap to scan the machine and to look for those open ports and services that usually can be used for exploitation.
 **Nmap** uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics. (From man pages of nmap on Kali)
@@ -84,11 +86,80 @@ At first, there is a rabbit hole in the website stating about the **Eyeore DOS P
  Of course we are trying to hack our way in to own this machine so, i still try to access the **/writeup** directory and saw this unfinished website of the owner.
  
  ![HTB-Writeup /writeup](images/writeup.PNG)
+ 
+ To be honest i was stucked at this part, i just stare at the unfinished website for almost an hour and having no idea what to do on this one. But it comes to my mind to view the source code and noticed something.
+ 
+ ```markdown
+ <!doctype html>
+<html lang="en_US"><head>
+	<title>Home - writeup</title>
+	
+<base href="http://10.10.10.138/writeup/" />
+<meta name="Generator" content="CMS Made Simple - Copyright (C) 2004-2019. All rights reserved." />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-### Jekyll Themes
+	<!-- cms_stylesheet error: No stylesheets matched the criteria specified -->
+<style>.footer { background-color: white; position: fixed; left: 0; bottom: 0; width: 100%; color: black; text-align: center; }</style>
+</head><body>
+	<header id="header">
+		<h1>writeup</h1>
+	</header>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/b3y0nd1xx7/HTB-Writeup/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.dddd
+	<nav id="menu">
+		
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+
+<ul><li class="currentpage"><a class="currentpage" href="http://10.10.10.138/writeup/">Home Page</a></li><li><a href="http://10.10.10.138/writeup/index.php?page=ypuffy">ypuffy</a></li><li><a href="http://10.10.10.138/writeup/index.php?page=blue">blue</a></li><li><a href="http://10.10.10.138/writeup/index.php?page=writeup">writeup</a></li></ul>
+	</nav>
+
+	<section id="content">
+		<h1>Home</h1>
+		<p>After many month of lurking around on HTB I also decided to start writing about the boxes I hacked. In the upcoming days, weeks and month you will find more and more content here as I am about to convert my famous incomplete notes into pretty write-ups.</p>
+<p>I am still searching for someone to provide or make a cool theme. If you are interested, please contact me on&nbsp;<a href="https://mm.netsecfocus.com/">NetSec Focus Mattermost</a>. Thanks.</p>	</section>
+<div class="footer">
+  <p>Pages are hand-crafted with vim. NOT.</p>
+</div>
+
+</body>
+
+</html>
+ ```
+The website was created in CMS Made Simple. It is an Open Source Content Management System that was built using PHP and the Smarty Engine, which keeps content, functionality, and templates separated. 
+
+After knowing what technology the machine was using, i tried to look for vulnerabilities and exploit for CMSMS and found an interesting exploit for CMSMS
+
+```markdown
+#!/usr/bin/env python
+#Exploit Title: Unauthenticated SQL Injection on CMS Made Simple <= 2.2.9
+#Date: 30-03-2019
+#Exploit Author: Daniele Scanu @ Certimeter Group
+#Vendor Homepage: https://www.cmsmadesimple.org/
+#Software Link: https://www.cmsmadesimple.org/downloads/cmsms/
+#Version: <= 2.2.9
+#Tested on: Ubuntu 18.04 LTS
+#CVE : CVE-2019-9053
+```
+It is a kind of time-based blind sql injection and i adjusted the **TIME** variable from 1 to 5 to check what value will work.
+
+```markdown
+
+url_vuln = options.url + '/moduleinterface.php?mact=News,m1_,default,0'
+session = requests.Session()
+dictionary = '1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM@._-$'
+flag = True
+password = ""
+temp_password = ""
+TIME = 5
+db_name = ""
+output = ""
+email = ""
+
+```
+
+And the value five (5) works!
+
+
+
+
